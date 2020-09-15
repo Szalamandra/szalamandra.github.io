@@ -1,0 +1,193 @@
+@use "sass:map";
+.pinkRadiant {
+  background: #eeaeca;
+  background: radial-gradient(circle, #eeaeca 30%, #94bbe9 100%);
+}
+
+.greenRadiant {
+  background: #b3fcad;
+  background: radial-gradient(circle, #b3fcad 2%, #8fbc8b 100%);
+}
+
+.pinkGreenRadiant {
+  background: #eeaeca;
+  background: radial-gradient(circle, #b3fcad 0%, rgba(238, 174, 202, 0.8) 30%, rgba(143, 188, 139, 0) 60%);
+  border-radius: 3%;
+  opacity: 70%;
+}
+
+section {
+  display: -ms-grid;
+  display: grid;
+  margin: 10px;
+  display: grid;
+  -ms-grid-rows: (minmax(200px, 400px))[1];
+      grid-template-rows: repeat(1 minmax(200px, 400px));
+  grid-gap: 20px;
+  height: 100vh;
+  margin: 0;
+  padding: 5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navOpen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*
+nav {
+  flex-direction: column;
+  flex-wrap: nowrap;
+ 
+  a{
+
+display:flex;
+
+align-content: space-between;
+color:color(background);
+    }}*/
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+}
+
+#nokep svg {
+  position: absolute;
+  right: 50%;
+  -webkit-box-shadow: 1px 1px 20px black;
+          box-shadow: 1px 1px 20px black;
+}
+
+.bg-kezdo {
+  background-color: #649264;
+  background-image: url(../kepek/fohatterkepmobil.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-green {
+  background-color: #649264;
+  color: #070c13;
+  background: radial-gradient(circle, #b3fcad 0%, #649264 80%);
+  border-radius: 3%;
+  color: #070c13;
+}
+
+.bg-greenKompl {
+  background-color: #926492;
+  color: #070c13;
+  color: #070c13;
+}
+
+.bg-black {
+  background-color: #070c13;
+  color: #649264;
+  color: #649264;
+}
+
+.bg-overlayBlack {
+  background-color: #222222;
+}
+
+.bg-overlayTransparent {
+  background: -webkit-gradient(linear, left bottom, left top, from(white), color-stop(0%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 0%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+  font-family: fontFamily(alap);
+}
+
+html,
+body {
+  overflow: hidden;
+  scale: 1;
+}
+
+main.container {
+  height: 100vh;
+}
+
+main.container header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (minmax(100px, 400px))[2];
+      grid-template-rows: repeat(2 minmax(100px, 400px));
+  grid-gap: 5px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  padding: 2% 2%;
+}
+
+main.container header div#logo {
+  -ms-grid-rows: 1/1;
+      grid-template-rows: 1/1;
+  font-size: 20px;
+}
+
+main.container header nav {
+  /*background-color: lighten(
+        color(header),
+        10%
+      );*/
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.container header nav a {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100% 1 1;
+          flex: 100% 1 1;
+  -webkit-text-size-adjust: auto;
+     -moz-text-size-adjust: auto;
+      -ms-text-size-adjust: auto;
+          text-size-adjust: auto;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "'Rubik', arial, helvetica";
+  color: #649264;
+  -ms-flex-line-pack: normal;
+      align-content: normal;
+}
+
+#teljes {
+  font-family: "'Rubik', arial, helvetica";
+  padding: 10% 10%;
+  /*background-color: adjust-color($color: color(backgr), $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 0.5);*/
+  font-style: italic;
+  position: absolute;
+  top: 35%;
+  bottom: 45%;
+  text-shadow: 0 3px 2px #798686;
+}
+
+#teljes #elsoS div h1#focim {
+  font-size: 3rem;
+  height: 30vh;
+  padding-left: -10px;
+  background-color: #649264, 0.8;
+  display: inline-block;
+}
+/*# sourceMappingURL=main.css.map */
