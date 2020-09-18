@@ -16,6 +16,24 @@
   opacity: 70%;
 }
 
+main {
+  display: -ms-grid;
+  display: grid;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 section {
   display: -ms-grid;
   display: grid;
@@ -54,18 +72,32 @@ color:color(background);
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#nokep {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
 }
 
 #nokep svg {
   position: absolute;
+  top: 5%;
   right: 50%;
+  left: 50%;
   -webkit-box-shadow: 1px 1px 20px black;
           box-shadow: 1px 1px 20px black;
 }
 
+@use 'variables';
 .gomb {
   /* @if $inset {
     width: inset $gombMeret;
@@ -76,8 +108,7 @@ footer {
   width: 40px;
   padding: 1%;
   color: blue;
-  background-color: black;
-  display: inline-block;
+  background-color: #649264;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
@@ -90,36 +121,47 @@ footer {
 }
 
 .gomb:hover {
-  background-color: black;
+  background-color: #9fbd9f;
   -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .gomb:active {
-  background-color: black;
+  background-color: #bdd2bd;
   -webkit-box-shadow: 0 5px #666;
           box-shadow: 0 5px #666;
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
 }
 
+#hambi {
+  position: fixed;
+  top: 10px;
+  right: 40%;
+  -webkit-transform-origin: translate(-50%, -50%);
+          transform-origin: translate(-50%, -50%);
+  /*display:flex;
+  flex-direction: row;
+  justify-content: space-around;*/
+}
+
 .hambicsik {
   position: inline-block;
   border: 1 px solid grey;
-  background-color: #d6d6ff;
+  background-color: #0d0d0d;
   width: 95%;
-  height: 0.5vh;
+  height: 3px;
   margin: auto;
-  border-radius: 20%;
+  border-radius: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .bg-kezdo {
@@ -169,12 +211,7 @@ footer {
 
 html,
 body {
-  overflow: hidden;
   scale: 1;
-}
-
-main.container {
-  height: 100vh;
 }
 
 main.container header {
@@ -230,7 +267,7 @@ main.container header nav a {
 
 #teljes {
   font-family: "'Rubik', arial, helvetica";
-  padding: 10% 10%;
+  padding: 5%;
   /*background-color: adjust-color($color: color(backgr), $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 0.5);*/
   font-style: italic;
   position: absolute;
