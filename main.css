@@ -1,4 +1,3 @@
-@use "sass:map";
 .pinkRadiant {
   background: #eeaeca;
   background: radial-gradient(circle, #eeaeca 30%, #94bbe9 100%);
