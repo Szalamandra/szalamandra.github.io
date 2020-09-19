@@ -1,4 +1,3 @@
-@use "sass:map";
 .pinkRadiant {
   background: #eeaeca;
   background: radial-gradient(circle, #eeaeca 30%, #94bbe9 100%);
@@ -16,20 +15,57 @@
   opacity: 70%;
 }
 
-section {
+div#headerDiv, section {
+  height: 100vh;
+}
+
+main {
   display: -ms-grid;
   display: grid;
-  margin: 10px;
+}
+
+main header {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+  position: fixed;
+}
+
+main .containerteljes {
+  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (minmax(200px, 400px))[1];
-      grid-template-rows: repeat(1 minmax(200px, 400px));
-  grid-gap: 20px;
+  grid-row: row 100vh;
+}
+
+main .containerteljes section {
+  display: -ms-grid;
+  display: grid;
+  margin: 1rem;
+  display: grid;
+  -ms-grid-rows: (minmax(200px, 1fr))[1];
+      grid-template-rows: repeat(1 minmax(200px, 1fr));
+  grid-gap: 1rem;
   height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 5%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main .containerteljes section div p {
+  margin: auto auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -54,16 +90,96 @@ color:color(background);
 }
 
 footer {
-  position: absolute;
   bottom: 0;
-  right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#nokep {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
 }
 
 #nokep svg {
   position: absolute;
+  top: 5%;
   right: 50%;
+  left: 50%;
   -webkit-box-shadow: 1px 1px 20px black;
           box-shadow: 1px 1px 20px black;
+}
+
+@use 'variables';
+.gomb {
+  /* @if $inset {
+    width: inset $gombMeret;
+    padding: inset $gombPadding;
+    color: inset $color;
+    background-color: inset $gombColor;
+  } @else {*/
+  width: 40px;
+  padding: 1%;
+  color: blue;
+  background-color: black;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+}
+
+.gomb:hover {
+  background-color: #333333;
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gomb:active {
+  background-color: #4d4d4d;
+  -webkit-box-shadow: 0 5px #666;
+          box-shadow: 0 5px #666;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+#hambi {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  -webkit-transform-origin: translate(-50%, -50%);
+          transform-origin: translate(-50%, -50%);
+  width: 6%;
+  min-width: 40px;
+  height: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.hambicsik {
+  position: inline-block;
+  border: 0.5 rem solid grey;
+  background-color: #cccccc;
+  width: 95%;
+  height: 0.2rem;
+  margin: auto;
+  border-radius: 15%;
 }
 
 .bg-kezdo {
@@ -71,13 +187,14 @@ footer {
   background-image: url(../kepek/fohatterkepmobil.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: local;
 }
 
 .bg-green {
   background-color: #649264;
   color: #070c13;
   background: radial-gradient(circle, #b3fcad 0%, #649264 80%);
-  border-radius: 3%;
+  border-radius: 1%;
   color: #070c13;
 }
 
@@ -113,19 +230,14 @@ footer {
 
 html,
 body {
-  overflow: hidden;
   scale: 1;
-}
-
-main.container {
-  height: 100vh;
 }
 
 main.container header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (minmax(100px, 400px))[2];
-      grid-template-rows: repeat(2 minmax(100px, 400px));
+  -ms-grid-rows: (minmax(100px, 1fr))[2];
+      grid-template-rows: repeat(2 minmax(100px, 1fr));
   grid-gap: 5px;
   -ms-grid-row: 1;
   grid-row: 1;
@@ -136,14 +248,16 @@ main.container header div#logo {
   -ms-grid-rows: 1/1;
       grid-template-rows: 1/1;
   font-size: 20px;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
 }
 
 main.container header nav {
-  /*background-color: lighten(
-        color(header),
-        10%
-      );*/
-  display: none;
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -151,9 +265,20 @@ main.container header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  top: 10vh;
+  width: 100vw;
+  line-height: 2rem;
+  padding: 2rem 2rem;
+  z-index: 1;
 }
 
-main.container header nav a {
+main.container header nav ul li {
+  list-style: none;
+}
+
+main.container header nav ul li a {
+  list-style: none;
   -webkit-box-flex: 100%;
       -ms-flex: 100% 1 1;
           flex: 100% 1 1;
@@ -162,32 +287,55 @@ main.container header nav a {
       -ms-text-size-adjust: auto;
           text-size-adjust: auto;
   text-decoration: none;
-  margin: 5px;
-  padding: 5px;
+  margin: 5%;
+  padding: 5%;
   font-size: 24px;
   font-weight: 900;
   font-family: "'Rubik', arial, helvetica";
   color: #649264;
-  -ms-flex-line-pack: normal;
-      align-content: normal;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-#teljes {
+main.container header nav ul li a:hover {
+  background-color: white;
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+main.container header nav ul li a:active {
+  background-color: white;
+  -webkit-box-shadow: 0 5px #666;
+          box-shadow: 0 5px #666;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.container div#headerDiv div h1#focim {
+  font-size: 3rem;
+  height: 30vh;
+  background-color: #649264, 0.8;
+  position: relative;
+  top: 50vh;
+  padding: 1rem;
+  text-align: center;
+  font-style: italic;
+  text-shadow: 23px 10px #bebebe;
+}
+
+.container div#teljes {
   font-family: "'Rubik', arial, helvetica";
-  padding: 10% 10%;
+  text-align: center;
   /*background-color: adjust-color($color: color(backgr), $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 0.5);*/
   font-style: italic;
-  position: absolute;
-  top: 35%;
-  bottom: 45%;
   text-shadow: 0 3px 2px #798686;
 }
 
-#teljes #elsoS div h1#focim {
-  font-size: 3rem;
-  height: 30vh;
-  padding-left: -10px;
-  background-color: #649264, 0.8;
-  display: inline-block;
+.container div#teljes section#elsoS {
+  padding-top: 1rem;
+}
+
+.container div#teljes section {
+  padding: 40% 10%;
 }
 /*# sourceMappingURL=main.css.map */
