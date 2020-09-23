@@ -1,4 +1,12 @@
-@use 'variables';
+@charset "UTF-8";
+/*
+ @include tablet{
+            
+        }
+        @include desktop{
+            
+        }
+        */
 /*@mixin hoverMenu($gombColor:rgba(215, 217, 221,1){
   &:hover {
     background-color: lighten($gombColor, 20%);
@@ -25,7 +33,8 @@
   background: #eeaeca;
   background: radial-gradient(circle, #b3fcad 0%, rgba(238, 174, 202, 0.8) 30%, rgba(143, 188, 139, 0) 60%);
   border-radius: 3%;
-  opacity: 70%;
+  opacity: 90%;
+  /*szöveg*/
 }
 
 @use "variables";
@@ -35,49 +44,171 @@
 @use "svgCuccok";
 @use "gombokMenu";
 @use "fonts";
-@use "variables";
 @use "animacio";
-@use "main.scss";
-div#headerDiv, section {
+div#headerDiv,
+section {
   height: 100vh;
-}
-
-main {
-  display: -ms-grid;
-  display: grid;
-}
-
-header {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 10vh;
-  position: fixed;
   width: 100%;
 }
 
-.containerteljes {
+.grid {
   display: -ms-grid;
   display: grid;
-  grid-row: row 100vh;
+  -ms-grid-columns: (minmax(1fr, 1fr))[12];
+      grid-template-columns: repeat(12 minmax(1fr, 1fr));
+  grid-gap: 1%;
+}
+
+.container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  margin: auto 0;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.container div#headerDiv {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  grid-row: span 4;
+  height: 100vh;
+  /*focim veg*/
+}
+
+.container div#headerDiv header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(5%, 1fr))[2];
+      grid-template-columns: repeat(2 minmax(5%, 1fr));
+  grid-gap: 5px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  padding: 2% 2%;
+}
+
+@media (min-width: 1200px) {
+  .container div#headerDiv header {
+    padding: 0;
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(1fr, 1fr))[12];
+        grid-template-columns: repeat(12 minmax(1fr, 1fr));
+    grid-gap: 1%;
+    height: 5vh;
+    position: fixed;
+    width: 100%;
+    /*display:inline-flex;
+  flex-direction: column;
+  justify-content: space-between;*/
+  }
+}
+
+.container div#headerDiv header div#logo {
+  -ms-grid-rows: 1/1;
+      grid-template-rows: 1/1;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+@media (min-width: 760px) {
+  .container div#headerDiv header div#logo {
+    grid-rows: span 1.5;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container div#headerDiv header div#logo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container div#headerDiv header div#navbar {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 8;
+    grid-column: 3/11;
+  }
+}
+
+.container div#headerDiv header div#hambi {
+  background-color: black;
+  position: fixed;
+  top: 1.5vh;
+  right: 1vh;
+  height: 5vh;
+}
+
+@media (min-width: 1200px) {
+  .container div#headerDiv header div#hambi {
+    visibility: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container div#headerDiv {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(8.3vw, 1fr))[12];
+        grid-template-columns: repeat(12 minmax(8.3vw, 1fr));
+    grid-gap: 1vw;
+    -ms-grid-columns: 2fr 10fr;
+        grid-template-columns: 2fr 10fr;
+  }
+}
+
+.container div#headerDiv div h1#focim {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/4;
+  height: 100vh;
+  -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 3rem;
+  max-height: 50vh;
+  background-color: color(backgr), 0.8;
+  position: relative;
+  top: 30vh;
+  padding: 1rem;
+  letter-spacing: 1vw;
+  font-style: italic;
+  text-shadow: 23px 10px #bebebe;
+}
+
+@media (min-width: 760px) {
+  .container div#headerDiv div h1#focim {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container div#headerDiv div h1#focim {
+    font-size: 5rem;
+    grid-row: span 4;
+    margin: 5% auto;
+  }
 }
 
 section {
   display: -ms-grid;
   display: grid;
   position: static;
-  margin: 1rem;
-  display: grid;
-  -ms-grid-rows: (minmax(200px, 1fr))[1];
-      grid-template-rows: repeat(1 minmax(200px, 1fr));
-  grid-gap: 1rem;
   height: 100vh;
   width: 100vw;
   margin: 0;
@@ -89,14 +220,7 @@ section {
       align-content: center;
 }
 
-section div p {
-  margin: auto auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-@media (min-width: 760px) {
+@media (min-width: 1200px) {
   section {
     display: -ms-grid;
     display: grid;
@@ -104,6 +228,13 @@ section div p {
         grid-template-columns: repeat(2 minmax(300px, 1fr));
     grid-gap: 2rem;
   }
+}
+
+section div p {
+  margin: auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .navZarva {
@@ -128,28 +259,79 @@ section div p {
   z-index: 1;
 }
 
+@media (min-width: 760px) {
+  .navZarva {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navZarva {
+    opacity: 1;
+    top: 0;
+    max-width: 100%;
+  }
+}
+
+.navZarva ul {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .navZarva ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 15%;
+            flex: 1 1 15%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 .navZarva ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
+  width: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .navZarva ul li a {
   list-style: none;
   -webkit-box-flex: 100%;
-      -ms-flex: 100% 1 1;
-          flex: 100% 1 1;
+      -ms-flex: 100% 1 10%;
+          flex: 100% 1 10%;
   -webkit-text-size-adjust: auto;
      -moz-text-size-adjust: auto;
       -ms-text-size-adjust: auto;
           text-size-adjust: auto;
   text-decoration: none;
-  margin: 5%;
-  padding: 5%;
+  margin: 1% auto;
+  padding: auto auto;
   font-size: 24px;
   font-weight: 900;
   font-family: font(alap);
   color: color(backgr);
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 .navOpen {
@@ -198,33 +380,38 @@ section div p {
       align-content: center;
 }
 
-@media (min-width: 760px) {
-  nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    opacity: 1;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-  }
-  nav a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-line-pack: justify;
-        align-content: space-between;
-    color: color(background);
-  }
+div#teljes {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
 }
 
 footer {
-  bottom: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1/13;
+  margin: 0;
+  max-width: 100%;
+}
+
+footer .itemfooter :nth-child(1) {
+  display: -ms-grid;
+  display: grid;
+  grid-column: span 6;
+  width: 50%;
+}
+
+footer .itemfooter :nth-child(2) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 7;
+  grid-column: 6/13;
+  width: 50%;
+}
+
+.itemfooter {
+  color: red;
 }
 
 #nokep {
@@ -234,7 +421,6 @@ footer {
   grid-column: 1/1;
   -ms-grid-row-align: center;
       align-self: center;
-  position: relative;
 }
 
 #nokep svg {
@@ -306,7 +492,7 @@ footer {
           justify-content: space-evenly;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
   #hambi {
     display: none;
   }
@@ -390,9 +576,71 @@ footer {
   display: inline-block;
 }
 
-@use "fonts";
-@use "variables";
-@use "animacio";
+@font-face {
+  font-family: heading;
+  src: local("Comic Sans Ms", cursive, sans-serif);
+}
+
+@font-face {
+  font-family: alap;
+  src: local("Rubik", Arial, Helvetica);
+}
+
+@font-face {
+  font-family: gloria;
+  src: url(..\font\Gloria_Hallelujah\GloriaHallelujah-Regular.ttf) format("truetype");
+  font-weight: 900;
+  font-stretch: 1,2;
+  letter-spacing: 0.5em;
+}
+
+/*
+ @include tablet{
+            
+        }
+        @include desktop{
+            
+        }
+        */
+.animacioX div {
+  position: absolute;
+}
+
+.animacioX div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  -webkit-transition: -webkit-transform 1000ms ease-in;
+  transition: -webkit-transform 1000ms ease-in;
+  transition: transform 1000ms ease-in;
+  transition: transform 1000ms ease-in, -webkit-transform 1000ms ease-in;
+}
+
+.animacioX div:nth-child(2) {
+  left: -20px;
+  width: 95%;
+  opacity: 0;
+  -webkit-transition: opacity 2000ms ease-out;
+  transition: opacity 2000ms ease-out;
+}
+
+.animacioX div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 95%;
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  -webkit-transition: -webkit-transform 1000ms ease-in;
+  transition: -webkit-transform 1000ms ease-in;
+  transition: transform 1000ms ease-in;
+  transition: transform 1000ms ease-in, -webkit-transform 1000ms ease-in;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
 .bg-kezdo {
   background-color: #649264;
   background-image: url(../kepek/fohatterkepmobil.jpg);
@@ -436,7 +684,22 @@ footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans",
+ "Lucida Sans Regular", "Lucida Grande",
+ "Lucida Sans Unicode", Geneva, Verdana,
+ sans-serif;
+}
+
+@media (min-width: 760px) {
+  * {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  * {
+    font-size: 2rem;
+  }
 }
 
 html,
@@ -448,40 +711,7 @@ a {
   text-decoration: none;
 }
 
-main.container header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (minmax(100px, 1fr))[2];
-      grid-template-rows: repeat(2 minmax(100px, 1fr));
-  grid-gap: 5px;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  padding: 2% 2%;
-}
-
-main.container header div#logo {
-  -ms-grid-rows: 1/1;
-      grid-template-rows: 1/1;
-  font-size: 20px;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-}
-
-.container div#headerDiv div h1#focim {
-  font-family: false;
-  font-size: 3rem;
-  height: 30vh;
-  background-color: #649264, 0.8;
-  position: relative;
-  top: 50vh;
-  padding: 1rem;
-  text-align: center;
-  font-style: italic;
-  text-shadow: 23px 10px #bebebe;
-}
-
-.container div#teljes {
+div#teljes {
   font-family: "'Rubik', arial, helvetica";
   text-align: center;
   /*background-color: adjust-color($color: color(backgr), $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 0.5);*/
@@ -489,11 +719,9 @@ main.container header div#logo {
   text-shadow: 0 3px 2px #798686;
 }
 
-.container div#teljes section#elsoS {
-  padding-top: 1rem;
-}
-
-.container div#teljes section {
-  padding: 40% 10%;
+@media (min-width: 1200px) {
+  footer {
+    font-size: 0.5rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
