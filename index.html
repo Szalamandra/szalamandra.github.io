@@ -13,16 +13,16 @@
 
 </head>
 
-<body id="body1">
-     
+<body class="bg-green">
+
     <main class="container bg-green grid">
-           <div class="stickyIkonok">
-                <i class="fas fa-calendar-alt"></i>
+        <div class="stickyIkonok">
+            <i class="fas fa-calendar-alt"></i>
             <i class="fas fa-feather-alt"></i></div>
 
         <div id="headerDiv" class="bg-kezdo">
             <header class="bg-black">
-                <div id="logo" class="">logo</div>
+                <div id="logo" class="hoverMenu"><a  href="/onismerkedo.html">LOGO</a></div>
 
                 <div id="hambi" class="gomb bg-black" type="button">
                     <div class="hambicsik"></div>
@@ -32,27 +32,25 @@
                 <div id="navbar" class="bg-overlay">
                     <nav class="navZarva">
                         <ul>
-                            <li><a class="hoverMenu"  href="/onismerkedo.html">Kezdőlap</a></li>
-                            <li><a class="hoverMenu" href="/magamrol.html">Rólam</a></li>
-                            <li><a class="hoverMenu" href="/foglalkozasok.html">Foglalkozások</a></li>
-                            <li><a class="hoverMenu" href="/arlista.html">Árlista</a></li>
+                            <li class="hoverMenu"><a class="hoverMenu" href="/magamrol.html">Rólam</a></li>
+                            <li class="hoverMenu"><a class="hoverMenu" href="/foglalkozasok.html">Foglalkozások</a></li>
+                            <li class="hoverMenu"><a class="hoverMenu" href="/arlista.html">Árlista</a></li>
                             <li class="hoverMenu"><a href="#">Időpontfoglalás</a></li>
-                            <li><a class="hoverMenu" href="#"> Továbbiak</a></li>
+                            <li class="hoverMenu"><a  href="#"> Továbbiak</a></li>
                         </ul>
-
-
                     </nav>
                 </div>
             </header>
             <div>
-                <h1 id="focim">Önismerkedő</h1>
+                <h1 id="focim" class="focimFont">Önismerkedő</h1>
             </div>
-        
+
         </div>
         <div id="teljes" class="grid">
             <section id="elsoS" class="bg-green grid">
                 <div id="szovegElso">
-                    <p><h2>Gyere!</h2> Játszunk együtt, hogy elérd a pozitív változást életed színpadán!</p>
+                    <p>
+                    <h2>Gyere!</h2> Játszunk együtt, hogy elérd a pozitív változást életed színpadán!</p>
 
                 </div>
                 <div id="noKep">
@@ -90,24 +88,87 @@
                     <h2>
                         Kik vagyunk mi? -Akik mi vagyunk!
                     </h2>
+                    <p>
+                        Az önismeret, önmegismerés egy olyan önmagunkra irányuló lelki folyamat, amely során megismerem
+                        tulajdonságaimat, képességeimet, szándékaimat, érzelmeimet, gondolataimat és mindezek együttes
+                        működését.</p> 
                 </div>
 
 
             </section>
             <section id="harmadikS" class="bg-greenKompl grid">
                 <div>
-                    <p>
-                        Az önismeret, önmegismerés egy olyan önmagunkra irányuló lelki folyamat, amely során megismerem
-                        tulajdonságaimat, képességeimet, szándékaimat, érzelmeimet, gondolataimat és mindezek együttes
-                        működését.</p>
-                </div>
-            </section>
-            <section id="negyedikS" class="bg-green grid">
-                <div>
-
                     <p>Tehát tudatában vagyok a saját működésemnek és tudatosan döntök, milyen hozzáállással fordulok
                         magam, mások és a világ felé.</p>
                 </div>
+            </section>
+            <section id="negyedikS" class="bg-green grid">
+                <div class="foFoglContainer">
+                    <div class="foFogl">
+                        <h2>
+                            I. Gyermek pszichodráma
+                        </h2>
+                        <a href="https://placeholder.com/">
+                        <img src="https://via.placeholder.com/350">
+                        </a> 
+                        <p>egy kis szöveg, hogy kedvem legyen idekattintani</p>
+
+                    </div>
+                    <div class="foFogl">
+                         <h2>
+                            II. Coaching
+                        </h2>
+                         <a href="https://placeholder.com/">
+                        <img src="https://via.placeholder.com/350">
+                        </a> 
+                        <div class="alFogl">
+                            <h3>
+                                1. Szülőknek
+                            </h3>
+                        </div>
+                         <div class="alFogl">
+                             <p>Felelős szülőként lehet nem mindig én vagyok a gubásmákos</p>
+                            <h3>
+                                2. Könyvmolyoknak
+                            </h3>
+                            <p>Szívesen vennék búvárleckéket is</p>
+                        </div>
+                   
+                    </div>
+                   
+                </div>
+            </section>
+            <section id="otodikS" class="bg-greenKompl grid">
+                <form action="form.php" class="formAlak">
+                    <fieldset class="">
+                        <legend>Ha bármi kérdése van:</legend>
+                        <div class="form-control">
+                            <label>Név*</label>
+                            <input type="text" id="nev" placeholder="Tündér Kata">
+                            <i class="far fa-smile-wink"></i>
+                            <i class="fas fa-frown-open"></i>
+                            <p class="hibaUzi">Kérem adja meg a nevét!</p>
+                        </div>
+                        <div class="form-control">
+                            <label>Email* </label>
+                            <input type="text" id="email" placeholder="tunderKata88@mail.com" class="formInput">
+                            <i class="far fa-smile-wink"></i>
+                            <i class="fas fa-frown-open"></i>
+                            <p class="hibaUzi">Kérem valós emailcímet adjon meg!</p>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="textArea">Üzenet:</label>
+                            <textarea id="textArea"></textarea></div>
+
+                    </fieldset>
+                    <fieldset>
+                        <div><input type="submit" id="gomb" value="Küldés"> </div>
+
+                    </fieldset>
+
+                </form>
+
             </section>
 
         </div>
