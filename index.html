@@ -41,7 +41,7 @@
                     </nav>
                 </div>
             </header>
-            <div>
+            <div id="focimDiv">
                 <h1 id="focim" class="focimFont">Önismerkedő</h1>
             </div>
 
@@ -125,10 +125,11 @@
                             <h3>
                                 1. Szülőknek
                             </h3>
-                        </div>
-                         <div class="alFogl">
-                             <p>Felelős szülőként lehet nem mindig én vagyok a gubásmákos</p>
-                            <h3>
+                        
+                         
+                             <p>Felelős szülőként lehet nem mindig én vagyok a gubásmákos</p></div>
+                            <div class="alFogl">
+                                <h3>
                                 2. Könyvmolyoknak
                             </h3>
                             <p>Szívesen vennék búvárleckéket is</p>
@@ -139,33 +140,35 @@
                 </div>
             </section>
             <section id="otodikS" class="bg-greenKompl grid">
-                <form action="form.php" class="formAlak">
-                    <fieldset class="">
+                <form action="index.html" class="formAlak" method="post"
+                >
+                   
                         <legend>Ha bármi kérdése van:</legend>
+                        
                         <div class="form-control">
                             <label>Név*</label>
-                            <input type="text" id="nev" placeholder="Tündér Kata">
+                            <input type="text" id="nev" placeholder="Tündér Kata" name="name">
                             <i class="far fa-smile-wink"></i>
                             <i class="fas fa-frown-open"></i>
                             <p class="hibaUzi">Kérem adja meg a nevét!</p>
                         </div>
                         <div class="form-control">
                             <label>Email* </label>
-                            <input type="text" id="email" placeholder="tunderKata88@mail.com" class="formInput">
+                            <input type="text" id="email" placeholder="tunderKata88@mail.com" name="email" class="formInput">
                             <i class="far fa-smile-wink"></i>
                             <i class="fas fa-frown-open"></i>
                             <p class="hibaUzi">Kérem valós emailcímet adjon meg!</p>
                         </div>
-
+                            
                         <div class="form-control">
                             <label for="textArea">Üzenet:</label>
-                            <textarea id="textArea"></textarea></div>
+                            <textarea id="textArea" name="message" placeholder="Üzenet" required></textarea></div>
 
-                    </fieldset>
-                    <fieldset>
-                        <div><input type="submit" id="gomb" value="Küldés"> </div>
-
-                    </fieldset>
+                
+                    <div class="form-control">
+                        <div><input type="submit" id="gomb" value="Küldés" class="submitGomb"> </div>
+                        </div>
+                   
 
                 </form>
 
