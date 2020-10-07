@@ -19,22 +19,22 @@ function menuEloHoz() {
 }
 
 function hambicsikMozog() {
+
   if (
     hambiGomb.classList.contains(
       "animacioXVissza"
-    )
-  ) {
+    )) {
+
     hambiGomb.classList.replace(
       "animacioXVissza",
       "animacioX"
     );
-  } else {
-    hambiGomb.classList.add("animacioX");
   }
-  mobilMenu.classList.replace(
-    "navZarva",
-    "navOpen"
-  );
+  else {
+    hambiGomb.classList.add("animacioX");
+
+  }
+  mobilMenu.classList.replace("navZarva", "navOpen")
 }
 
 function hambicsikMozogVissza() {
@@ -42,10 +42,7 @@ function hambicsikMozogVissza() {
     "animacioX",
     "animacioXVissza"
   );
-  mobilMenu.classList.replace(
-    "navOpen",
-    "navZarva"
-  );
+  mobilMenu.classList.replace("navOpen", "navZarva");
 }
 
 function lathato() {
@@ -53,6 +50,7 @@ function lathato() {
   if (ablakmeret > 200) {
     stickyIkonok.style.visibility = "visible";
   }
+
 }
 
 //innen a formnak a validatione
@@ -60,46 +58,39 @@ let gomb = "";
 let fromControl = "";
 let formInput = "";
 function formValid() {
+
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   let jo = 0;
 
-  if (
-    formInput[0].value.trim() === "" ||
-    formInput[0].value.trim() == null
-  ) {
-    formControl[0].classList.toggle("failed");
-    if (
-      formControl[0].classList.contains("success")
-    )
-      formControl[0].classList.replace(
-        "success",
-        "failed"
-      );
-  } else {
-    formControl[0].classList.toggle("success");
+  if (formInput[0].value.trim() === "" || formInput[0].value.trim() == null) {
+    formControl[0].classList.toggle('failed');
+    if (formControl[0].classList.contains('success'))
+      formControl[0].classList.replace('success', 'failed');
+  }
+  else {
+    formControl[0].classList.toggle('success');
     jo++;
-    if (
-      formControl[0].classList.contains("failed")
-    )
-      formControl[0].classList.replace(
-        "failed",
-        "success"
-      );
+    if (formControl[0].classList.contains('failed'))
+      formControl[0].classList.replace('failed', 'success');
   }
 
   if (!regex.test(formInput[1].value.trim())) {
-    formControl[1].classList.toggle("failed");
-  } else {
-    formControl[1].classList.toggle("success");
+    formControl[1].classList.toggle('failed');
+  }
+  else {
+    formControl[1].classList.toggle('success');
     jo++;
   }
-  if (jo >= 2) return true;
+  if (jo >= 2)
+    return true;
   else {
     return preventDefault();
+
   }
 }
 function init() {
-  mobilMenu = $("#navbar>nav");
+  mobilMenu = $(
+    "#navbar>nav");
   hambicsikTomb = $tomb("div.hambicsik");
 
   hambiGomb = $("#hambi");
@@ -108,6 +99,7 @@ function init() {
   //formhoz
   formInput = $tomb(".form-control input");
   formControl = $tomb(".form-control");
+
 
   console.log(formInput[0].value.trim());
   //esemenykezelők
@@ -118,15 +110,9 @@ function init() {
   );
   gomb.addEventListener(
     "click",
-    formValid,
-    false
-  );
-  stickyIkonok = $(".stickyIkonok");
-  window.addEventListener(
-    "scroll",
-    lathato,
-    false
-  );
+    formValid, false);
+  stickyIkonok = $('.stickyIkonok');
+  window.addEventListener("scroll", lathato, false);
 
   //var kep=$('kep');
   //kep.addEventListener('click', kepbetolt, false);
