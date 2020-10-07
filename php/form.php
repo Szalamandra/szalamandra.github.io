@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
 
         $emailem="locolobo@freemail.hu";
         $headers="From: honlapomról".$emailFrom;
-        $txt="Emailt kaptál".$name."től".\n\n".$message;
+        $txt="Emailt kaptál".$name."től".\n\n.$message;
 
       mail($emailem,$txt,$emailFrom);
       header("Location: index.html?mailsend");
