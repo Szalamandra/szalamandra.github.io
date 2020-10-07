@@ -15,12 +15,7 @@
 </head>
 
 <body class="bg-green">
- <?php
-    include ("form.php");
-    echo "hello";
- ?>
- <?php 
-  require_once('php/form.php'); ?>
+
     <main class="container bg-green grid">
         <div class="stickyIkonok">
             <i class="fas fa-calendar-alt"></i>
@@ -146,19 +141,19 @@
                 </div>
             </section>
             <section id="otodikS" class="bg-greenKompl grid">
-                <form action="php\form.php" class="formAlak" method="post"
+                <form action="C:\xampp\htdocs\php\form.php" class="formAlak" method="post"
                 >
                    
                         <legend>Ha bármi kérdése van:</legend>
                         
-                        <div class="form-control success">
+                        <div class="form-control">
                             <label>Név*</label>
                             <input type="text" id="nev" placeholder="Tündér Kata" name="name">
                             <i class="far fa-smile-wink"></i>
                             <i class="fas fa-frown-open"></i>
                             <p class="hibaUzi">Kérem adja meg a nevét!</p>
                         </div>
-                        <div class="form-control success">
+                        <div class="form-control">
                             <label>Email* </label>
                             <input type="text" id="email" placeholder="tunderKata88@mail.com" name="email" class="formInput">
                             <i class="far fa-smile-wink"></i>
